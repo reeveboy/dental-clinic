@@ -1,22 +1,23 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { withProtected } from "../utils/WithProtected";
 import { getDate } from "../utils/getDate";
 
 function Home() {
   const navigate = useNavigate();
 
-  const [appointments, setAppointments] = useState([]);
+  // const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
     if (!localStorage.getItem("token"))
       return navigate("/login", { replace: true });
 
-    axios
-      .get(`http://localhost:4000/api/appointments/${getDate()}`)
-      .then((res) => {
-        setAppointments(res.data);
-      });
+    // axios
+    //   .get(`http://localhost:4000/api/appointments/${getDate()}`)
+    //   .then((res) => {
+    //     setAppointments(res.data);
+    //   });
   }, []);
 
   return (
@@ -43,7 +44,7 @@ function Home() {
             </tr>
           </thead>
           <tbody>
-            {appointments.map((appointment, id) => (
+            {/* {appointments.map((appointment, id) => (
               <tr key={id} className="bg-white border-b  hover:bg-gray-50 0">
                 <th
                   scope="row"
@@ -63,7 +64,7 @@ function Home() {
                   </Link>
                 </td>
               </tr>
-            ))}
+            ))} */}
           </tbody>
         </table>
       </div>
@@ -71,4 +72,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default withProtected(Home);

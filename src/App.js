@@ -12,25 +12,20 @@ import AppointmentEdit from "./pages/appointments/AppointmentEdit";
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
-        <Route index element={<Home />}></Route>
-        <Route exact path="/patients" element={<Patients />}></Route>
-        <Route
-          exact
-          path="/patients/register"
-          element={<RegisterPatients />}></Route>
-        <Route exact path="/doctors" element={<Doctors />}></Route>
-        <Route
-          exact
-          path="/doctors/register"
-          element={<RegisterDoctors />}></Route>
-        <Route exact path="/book-appointment" element={<Book />}></Route>
-        <Route
-          exact
-          path="/appointment-edit"
-          element={<AppointmentEdit />}></Route>
         <Route exact path="/login" element={<Login />}></Route>
+
+        <Route index element={<Home />} />
+        {/* <Route exact path="/patients" element={<Patients />} />
+          <Route
+            exact
+            path="/patients/register"
+            element={<RegisterPatients />}
+          />
+          <Route exact path="/doctors" element={<Doctors />} />
+          <Route exact path="/doctors/register" element={<RegisterDoctors />} />
+          <Route exact path="/book-appointment" element={<Book />} />
+          <Route exact path="/appointment-edit" element={<AppointmentEdit />} /> */}
       </Routes>
     </BrowserRouter>
   );
