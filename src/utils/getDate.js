@@ -4,7 +4,7 @@ export const getDate = () => {
   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   var yyyy = today.getFullYear();
 
-  today = dd + "-" + mm + "-" + yyyy;
+  today = yyyy + "-" + mm + "-" + dd;
 
   return today;
 };

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
+import { withProtected } from "../../components/WithProtected";
 
 function RegisterDoctors() {
   const [fname, setFname] = useState("");
@@ -186,4 +187,4 @@ function RegisterDoctors() {
   );
 }
 
-export default RegisterDoctors;
+export default withProtected(RegisterDoctors);

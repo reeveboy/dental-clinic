@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import { withProtected } from "../components/WithProtected";
 import { formatDate } from "../utils/formatDate";
 
 function Book() {
@@ -187,4 +188,4 @@ function Book() {
   );
 }
 
-export default Book;
+export default withProtected(Book);

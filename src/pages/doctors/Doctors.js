@@ -1,18 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { withProtected } from "../../components/WithProtected";
 
 function Doctors() {
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:4000/api/doctors").then((res) => {
+    axios.get("http://localhost:5000/api/doctors").then((res) => {
       setDoctors(res.data);
     });
   }, []);
   return (
-    <div className="w-3/4 mx-auto p-4">
+    <div>
       <div className="flex justify-between">
-        <p>Doctors</p>
+        <p className="text-xl font-semibold">Doctors</p>
         <Link to="/doctors/register">
           <button>Register Doctor</button>
         </Link>
@@ -45,7 +46,7 @@ function Doctors() {
                 <th
                   scope="row"
                   className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
-                  {doctor.fname + " " + doctor.lname}
+                  {doctor.first_name + " " + doctor.last_name}
                 </th>
                 <td className="py-4 px-6">{doctor.email}</td>
                 <td className="py-4 px-6">{doctor.contact_number}</td>
@@ -60,4 +61,4 @@ function Doctors() {
   );
 }
 
-export default Doctors;
+export default withProtected(Doctors);

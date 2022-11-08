@@ -1,21 +1,26 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const links = [
     {
       name: "Home",
+      link: "/",
       img: "./icons/home.png",
     },
     {
       name: "Patients",
+      link: "/patients",
       img: "./icons/patient.png",
     },
     {
       name: "Doctors",
+      link: "/doctors",
       img: "./icons/doctor.png",
     },
     {
       name: "Book Appointment",
+      link: "/book-appointment",
       img: "./icons/appointments.png",
     },
   ];
@@ -29,39 +34,39 @@ function Sidebar() {
   };
 
   return (
-    <ul className="flex flex-col space-y-2 h-screen w-60 overflow-y-auto py-4 px-3 bg-[#7DE2D1]">
+    <ul className="flex flex-col space-y-2 h-screen w-60 overflow-y-auto py-4 px-3 bg-[#339989]">
       <div className="flex items-center pl-2.5 mb-5">
         <img src="./icons/tooth.png" className="mr-3 h-6 sm:h-7" />
-        <span className="self-center text-xl font-semibold whitespace-nowrap text-[#131515]">
+        <span className="self-center text-xl font-semibold whitespace-nowrap text-[#FFFAFB]">
           Oral-B
         </span>
       </div>
       {links.map((link, id) => (
         <li key={id}>
-          <a
-            href="#"
-            className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg  hover:bg-[#FFFAFB] ">
-            <img src={link.img} height={32} width={32} />
-            <span className="ml-3 capitalize text-lg">{link.name}</span>
-          </a>
+          <Link to={link.link}>
+            <a
+              href="#"
+              className="flex items-center p-2 text-base font-normal text-[#FFFAFB] hover:text-gray-900 rounded-lg  hover:bg-[#FFFAFB] ">
+              <img src={link.img} height={32} width={32} />
+              <span className="ml-3 capitalize ">{link.name}</span>
+            </a>
+          </Link>
         </li>
       ))}
       <p className="grow"></p>
       <li className="">
         <button
           onClick={openModal}
-          className="flex w-full items-center p-2 text-base font-normal text-gray-900 rounded-lg  hover:bg-[#FFFAFB] ">
+          className="flex w-full items-center p-2 text-base font-normal text-[#FFFAFB] hover:text-gray-900 rounded-lg  hover:bg-[#FFFAFB] ">
           <img src="./icons/exit.png" height={32} width={32} />
-          <span className="ml-3 capitalize text-lg">Logout</span>
+          <span className="ml-3 capitalize ">Logout</span>
         </button>
       </li>
       {showModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                {/*header*/}
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                   <button
                     onClick={closeModal}

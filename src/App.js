@@ -16,16 +16,12 @@ function App() {
         <Route exact path="/login" element={<Login />}></Route>
 
         <Route index element={<Home />} />
-        {/* <Route exact path="/patients" element={<Patients />} />
-          <Route
-            exact
-            path="/patients/register"
-            element={<RegisterPatients />}
-          />
-          <Route exact path="/doctors" element={<Doctors />} />
-          <Route exact path="/doctors/register" element={<RegisterDoctors />} />
-          <Route exact path="/book-appointment" element={<Book />} />
-          <Route exact path="/appointment-edit" element={<AppointmentEdit />} /> */}
+        <Route exact path="/patients" element={<Patients />} />
+        <Route exact path="/patients/register" element={<RegisterPatients />} />
+        <Route exact path="/doctors" element={<Doctors />} />
+        <Route exact path="/doctors/register" element={<RegisterDoctors />} />
+        <Route exact path="/book-appointment" element={<Book />} />
+        <Route exact path="/appointment-edit" element={<AppointmentEdit />} />
       </Routes>
     </BrowserRouter>
   );

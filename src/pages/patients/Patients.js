@@ -1,18 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { withProtected } from "../../components/WithProtected";
 
 function Patients() {
   const [patients, setPatients] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:4000/api/patients").then((res) => {
+    axios.get("http://localhost:5000/api/patients").then((res) => {
       setPatients(res.data);
     });
   }, []);
   return (
-    <div className="w-3/4 mx-auto p-4">
+    <div className="w-full">
       <div className="flex justify-between">
-        <p>Patients</p>
+        <p className="text-xl font-semibold">Patients</p>
         <Link to="/patients/register">
           <button>Register Patient</button>
         </Link>
@@ -22,6 +23,9 @@ function Patients() {
         <table className="w-full text-sm text-left text-gray-500">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
             <tr>
+              <th scope="col" className="py-3 px-6">
+                #
+              </th>
               <th scope="col" className="py-3 px-6">
                 Patient Name
               </th>
@@ -42,10 +46,12 @@ function Patients() {
           <tbody>
             {patients.map((patient) => (
               <tr className="bg-white border-b  hover:bg-gray-50 0">
+                <td className="py-4 px-6">{patient.id}</td>
+
                 <th
                   scope="row"
                   className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
-                  {patient.fname + " " + patient.lname}
+                  {patient.first_name + " " + patient.last_name}
                 </th>
                 <td className="py-4 px-6">{patient.email}</td>
                 <td className="py-4 px-6">{patient.contact_number}</td>
@@ -60,4 +66,4 @@ function Patients() {
   );
 }
 
-export default Patients;
+export default withProtected(Patients);

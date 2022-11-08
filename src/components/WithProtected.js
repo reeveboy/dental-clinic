@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 export function withProtected(Component) {
   return function WithProtected(props) {
@@ -13,8 +14,11 @@ export function withProtected(Component) {
     return (
       <div className="flex">
         <Sidebar />
-        <div>
-          <Component {...props} />
+        <div className="flex relative flex-col grow h-screen overflow-y-auto">
+          <Header />
+          <div className="p-4">
+            <Component {...props} />
+          </div>
         </div>
       </div>
     );
