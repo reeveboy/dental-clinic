@@ -6,22 +6,22 @@ function Sidebar() {
     {
       name: "Home",
       link: "/",
-      img: "./icons/home.png",
+      img: "/icons/home.svg",
     },
     {
       name: "Patients",
       link: "/patients",
-      img: "./icons/patient.png",
+      img: "/icons/pulse.svg",
     },
     {
       name: "Doctors",
       link: "/doctors",
-      img: "./icons/doctor.png",
+      img: "/icons/stethoscope.svg",
     },
     {
       name: "Book Appointment",
       link: "/book-appointment",
-      img: "./icons/appointments.png",
+      img: "/icons/calendar.svg",
     },
   ];
   const [showModal, setShowModal] = useState(false);
@@ -35,19 +35,15 @@ function Sidebar() {
 
   return (
     <ul className="flex flex-col space-y-2 h-screen w-60 overflow-y-auto py-4 px-3 bg-[#339989]">
-      <div className="flex items-center pl-2.5 mb-5">
-        <img src="./icons/tooth.png" className="mr-3 h-6 sm:h-7" />
-        <span className="self-center text-xl font-semibold whitespace-nowrap text-[#FFFAFB]">
-          Oral-B
-        </span>
+      <div className="flex items-center pl-2.5 mb-5 cursor-pointer">
+        <img src="/icons/tooth.png" className="mr-3 h-8" />
+        <div className="text-3xl font-semibold text-white cursive">Oral B</div>
       </div>
       {links.map((link, id) => (
         <li key={id}>
           <Link to={link.link}>
-            <a
-              href="#"
-              className="flex items-center p-2 text-base font-normal text-[#FFFAFB] hover:text-gray-900 rounded-lg  hover:bg-[#FFFAFB] ">
-              <img src={link.img} height={32} width={32} />
+            <a className="flex items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#7DE2D1] ">
+              <img src={link.img} height={25} width={25} />
               <span className="ml-3 capitalize ">{link.name}</span>
             </a>
           </Link>
@@ -57,8 +53,8 @@ function Sidebar() {
       <li className="">
         <button
           onClick={openModal}
-          className="flex w-full items-center p-2 text-base font-normal text-[#FFFAFB] hover:text-gray-900 rounded-lg  hover:bg-[#FFFAFB] ">
-          <img src="./icons/exit.png" height={32} width={32} />
+          className="flex w-full items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#7DE2D1] ">
+          <img src="/icons/sign-out.svg" height={25} width={25} />
           <span className="ml-3 capitalize ">Logout</span>
         </button>
       </li>

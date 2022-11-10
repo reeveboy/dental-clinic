@@ -1,10 +1,9 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
-import { withProtected } from "../../components/WithProtected";
 
 function RegisterDoctors() {
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
+  const [first_name, setFname] = useState("");
+  const [last_name, setLname] = useState("");
   const [contact_number, setContactNumber] = useState("");
   const [email, setEmail] = useState("");
   const [qualifications, setQualifications] = useState("");
@@ -15,10 +14,10 @@ function RegisterDoctors() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
-      case "fname":
+      case "first_name":
         setFname(value);
         break;
-      case "lname":
+      case "last_name":
         setLname(value);
         break;
       case "contact_number":
@@ -44,9 +43,9 @@ function RegisterDoctors() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:4000/api/doctors", {
-        fname,
-        lname,
+      .post("http://localhost:5000/api/doctors", {
+        first_name,
+        last_name,
         contact_number,
         email,
         qualifications,
@@ -67,124 +66,123 @@ function RegisterDoctors() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center p-4">
-      Register Doctor
+    <div className="">
+      <span className="text-lg font-medium">Register Doctor</span>
       <p className="p-2"></p>
-      <form ref={formRef} onSubmit={handleSubmit} className="w-3/4">
-        <div className="overflow-hidden shadow sm:rounded-md">
-          <div className="bg-white px-4 py-5 sm:p-6">
-            <div className="grid grid-cols-6 gap-6">
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="first-name"
-                  className="block text-sm font-medium text-gray-700">
-                  First name
-                </label>
-                <input
-                  required
-                  onChange={handleChange}
-                  type="text"
-                  name="fname"
-                  id="fname"
-                  autoComplete="given-name"
-                  className="px-3 py-2 border-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
+      <form
+        className="grid grid-cols-1 gap-4"
+        ref={formRef}
+        onSubmit={handleSubmit}>
+        <div className="">
+          <label
+            htmlFor="fname"
+            className="block text-sm font-medium text-gray-700">
+            First Name
+          </label>
+          <input
+            required
+            placeholder="Enter First Name"
+            onChange={handleChange}
+            type="text"
+            name="first_name"
+            id="first_name"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
 
-              <div className="col-span-6 sm:col-span-3">
-                <label
-                  htmlFor="lname"
-                  className="block text-sm font-medium text-gray-700">
-                  Last name
-                </label>
-                <input
-                  required
-                  onChange={handleChange}
-                  type="text"
-                  name="lname"
-                  id="lname"
-                  autoComplete="family-name"
-                  className="px-3 py-2 border-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
+        <div className="">
+          <label
+            htmlFor="lname"
+            className="block text-sm font-medium text-gray-700">
+            Last Name
+          </label>
+          <input
+            required
+            placeholder="Enter Last Name"
+            onChange={handleChange}
+            type="text"
+            name="last_name"
+            id="last_name"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
 
-              <div className="col-span-6 sm:col-span-4">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700">
-                  Email address
-                </label>
-                <input
-                  required
-                  onChange={handleChange}
-                  type="text"
-                  name="email"
-                  id="email"
-                  autoComplete="email"
-                  className="px-3 py-2 border-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
+        <div className="">
+          <label
+            htmlFor="contact_number"
+            className="block text-sm font-medium text-gray-700">
+            Contact Number
+          </label>
+          <input
+            required
+            placeholder="Enter Contact Number"
+            onChange={handleChange}
+            type="text"
+            name="contact_number"
+            id="contact_number"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
 
-              <div className="col-span-6 sm:col-span-4">
-                <label
-                  htmlFor="contact_number"
-                  className="block text-sm font-medium text-gray-700">
-                  Contact Number
-                </label>
-                <input
-                  required
-                  onChange={handleChange}
-                  type="text"
-                  name="contact_number"
-                  id="contact_number"
-                  typeof="tel"
-                  autoComplete="contact_number"
-                  className="px-3 py-2 border-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
+        <div className="">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700">
+            Email Adress
+          </label>
+          <input
+            required
+            placeholder="Enter Email Number"
+            onChange={handleChange}
+            type="email"
+            name="email"
+            id="email"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
 
-              <div className="col-span-6 sm:col-span-4">
-                <label
-                  htmlFor="qualifications"
-                  className="block text-sm font-medium text-gray-700">
-                  Qualifictions
-                </label>
-                <input
-                  required
-                  onChange={handleChange}
-                  type="text"
-                  name="qualifications"
-                  id="qualifications"
-                  className="px-3 py-2 border-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
+        <div className="">
+          <label
+            htmlFor="qualifications"
+            className="block text-sm font-medium text-gray-700">
+            Qualification
+          </label>
+          <input
+            placeholder="Enter the Qualification"
+            required
+            onChange={handleChange}
+            type="text"
+            name="qualifications"
+            id="qualifications"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
 
-              <div className="col-span-6">
-                <label
-                  htmlFor="area_of_specialization"
-                  className="block text-sm font-medium text-gray-700">
-                  Area of Specialization
-                </label>
-                <input
-                  required
-                  onChange={handleChange}
-                  type="text"
-                  name="area_of_specialization"
-                  id="area_of_specialization"
-                  className="px-3 py-2 border-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-            <button className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-              Save
-            </button>
-          </div>
+        <div className="">
+          <label
+            htmlFor="area_of_specialization"
+            className="block text-sm font-medium text-gray-700">
+            Area of Specialization
+          </label>
+          <input
+            placeholder="Enter the Area of Specialization"
+            required
+            onChange={handleChange}
+            type="text"
+            name="area_of_specialization"
+            id="area_of_specialization"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
+
+        <div className="bg-gray-50 col-span-2 text-center">
+          <button className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Submit!
+          </button>
         </div>
       </form>
     </div>
   );
 }
 
-export default withProtected(RegisterDoctors);
+export default RegisterDoctors;
