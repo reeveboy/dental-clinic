@@ -74,11 +74,6 @@ function RegisterPatients({ closeModal }) {
         ref={formRef}
         onSubmit={handleSubmit}>
         <div className="">
-          <label
-            htmlFor="fname"
-            className="block text-sm font-medium text-gray-700">
-            First Name
-          </label>
           <input
             required
             placeholder="Enter First Name"
@@ -91,11 +86,6 @@ function RegisterPatients({ closeModal }) {
         </div>
 
         <div className="">
-          <label
-            htmlFor="lname"
-            className="block text-sm font-medium text-gray-700">
-            Last Name
-          </label>
           <input
             required
             placeholder="Enter Last Name"
@@ -108,11 +98,6 @@ function RegisterPatients({ closeModal }) {
         </div>
 
         <div className="">
-          <label
-            htmlFor="contact_number"
-            className="block text-sm font-medium text-gray-700">
-            Contact Number
-          </label>
           <input
             required
             placeholder="Enter Contact Number"
@@ -125,11 +110,6 @@ function RegisterPatients({ closeModal }) {
         </div>
 
         <div className="">
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700">
-            Email Adress
-          </label>
           <input
             required
             placeholder="Enter Email Number"
@@ -142,11 +122,6 @@ function RegisterPatients({ closeModal }) {
         </div>
 
         <div className="">
-          <label
-            htmlFor="blood_group"
-            className="block text-sm font-medium text-gray-700">
-            Blood Group
-          </label>
           <input
             placeholder="Enter the Blood Group"
             required
@@ -159,11 +134,6 @@ function RegisterPatients({ closeModal }) {
         </div>
 
         <div className="">
-          <label
-            htmlFor="address"
-            className="block text-sm font-medium text-gray-700">
-            Address
-          </label>
           <input
             placeholder="Enter the Address"
             required

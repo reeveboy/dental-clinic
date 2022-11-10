@@ -166,7 +166,7 @@ function Appointment() {
           <div className="flex">
             <button
               type="submit"
-              className="inline-flex justify-center rounded-md border border-transparent bg-[#339989] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#247065] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
               Submit!
             </button>
             <p className="p-2"></p>
@@ -180,7 +180,7 @@ function Appointment() {
         </form>
         <p className="p-2"></p>
         <div className="flex flex-col">
-          <div className="p-2 flex flex-col items-center bg-white rounded-lg border border-gray-200">
+          <div className="p-2 w-44 flex flex-col items-center bg-white rounded-lg border border-gray-200">
             <img
               className="mb-3 w-20 h-20 rounded-full shadow-lg"
               src={`https://avatars.dicebear.com/api/big-ears/${
@@ -193,7 +193,7 @@ function Appointment() {
             <span className="text-sm text-gray-500 ">Patient</span>
           </div>
           <p className="p-2"></p>
-          <div className="p-2 flex flex-col items-center bg-white rounded-lg border border-gray-200">
+          <div className="p-2 w-42 flex flex-col items-center bg-white rounded-lg border border-gray-200">
             <img
               className="mb-3 w-20 h-20 rounded-full shadow-lg"
               src={`https://avatars.dicebear.com/api/big-ears/${

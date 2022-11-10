@@ -35,6 +35,7 @@ function Patients() {
         <table className="w-full text-sm text-left text-gray-500 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
             <tr>
+              <th></th>
               <th scope="col" className="py-3 px-6">
                 Patient Name
               </th>
@@ -52,6 +53,15 @@ function Patients() {
           <tbody>
             {patients.map((patient) => (
               <tr className="bg-white border-b  hover:bg-gray-50 0">
+                <td className="py-4 px-6">
+                  <img
+                    className="h-16"
+                    src={`https://avatars.dicebear.com/api/big-ears/${
+                      patient.first_name + " " + patient.last_name
+                    }.svg`}
+                    alt=""
+                  />
+                </td>
                 <th
                   scope="row"
                   className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">

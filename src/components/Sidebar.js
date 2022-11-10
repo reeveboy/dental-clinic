@@ -7,23 +7,28 @@ function Sidebar() {
       name: "Home",
       link: "/",
       img: "/icons/home.svg",
+      active: window.location.pathname === "/",
     },
     {
       name: "Patients",
       link: "/patients",
       img: "/icons/pulse.svg",
+      active: window.location.pathname === "/patients",
     },
     {
       name: "Doctors",
       link: "/doctors",
       img: "/icons/stethoscope.svg",
+      active: window.location.pathname === "/doctors",
     },
     {
       name: "Book Appointment",
       link: "/book-appointment",
       img: "/icons/calendar.svg",
+      active: window.location.pathname === "/book-appointment",
     },
   ];
+
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => setShowModal(false);
   const openModal = () => setShowModal(true);
@@ -39,21 +44,35 @@ function Sidebar() {
         <img src="/icons/tooth.png" className="mr-3 h-8" />
         <div className="text-3xl font-semibold text-white cursive">Oral B</div>
       </div>
-      {links.map((link, id) => (
-        <li key={id}>
-          <Link to={link.link}>
-            <a className="flex items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#7DE2D1] ">
-              <img src={link.img} height={25} width={25} />
-              <span className="ml-3 capitalize ">{link.name}</span>
-            </a>
-          </Link>
-        </li>
-      ))}
+      {links.map((link, id) => {
+        if (link.active) {
+          return (
+            <li key={id}>
+              <Link to={link.link}>
+                <a className="flex items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg bg-[#176b5d] ">
+                  <img src={link.img} height={25} width={25} />
+                  <span className="ml-3 capitalize ">{link.name}</span>
+                </a>
+              </Link>
+            </li>
+          );
+        }
+        return (
+          <li key={id}>
+            <Link to={link.link}>
+              <a className="flex items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#176b5d] ">
+                <img src={link.img} height={25} width={25} />
+                <span className="ml-3 capitalize ">{link.name}</span>
+              </a>
+            </Link>
+          </li>
+        );
+      })}
       <p className="grow"></p>
       <li className="">
         <button
           onClick={openModal}
-          className="flex w-full items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#7DE2D1] ">
+          className="flex w-full items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#176b5d] ">
           <img src="/icons/sign-out.svg" height={25} width={25} />
           <span className="ml-3 capitalize ">Logout</span>
         </button>
