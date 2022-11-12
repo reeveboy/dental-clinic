@@ -19,12 +19,12 @@ function Patients() {
   return (
     <div className="w-full">
       <div className="flex justify-between items-baseline ">
-        <p className="text-2xl font-medium text-[#339989] underline underline-offset-4">
+        <p className="text-3xl font-medium text-[#339989] underline underline-offset-4">
           Patients
         </p>
         <button
           onClick={openModal}
-          class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200">
+          class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-md font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200">
           <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
             Add new Patinet
           </span>
@@ -33,7 +33,7 @@ function Patients() {
       <p className="p-2"></p>
       <div className="w-full overflow-x-auto relative shadow-md ">
         <table className="w-full text-sm text-left text-gray-500 ">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
+          <thead className="text-md text-white uppercase bg-[#339989] ">
             <tr>
               <th></th>
               <th scope="col" className="py-3 px-6">
@@ -52,7 +52,7 @@ function Patients() {
           </thead>
           <tbody>
             {patients.map((patient) => (
-              <tr className="bg-white border-b  hover:bg-gray-50 0">
+              <tr className="bg-white border-b  hover:bg-gray-50 text-lg">
                 <td className="py-4 px-6">
                   <img
                     className="h-16"

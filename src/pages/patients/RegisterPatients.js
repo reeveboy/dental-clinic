@@ -67,10 +67,10 @@ function RegisterPatients({ closeModal }) {
 
   return (
     <div className="">
-      <span className="text-lg font-medium">Register Patient</span>
+      <span className="text-2xl font-medium">Enter Patient Details</span>
       <p className="p-2"></p>
       <form
-        className="grid grid-cols-1 gap-4"
+        className="grid grid-cols-1 gap-4 text-lg"
         ref={formRef}
         onSubmit={handleSubmit}>
         <div className="">
@@ -81,7 +81,7 @@ function RegisterPatients({ closeModal }) {
             type="text"
             name="fname"
             id="fname"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 "
           />
         </div>
 
@@ -93,7 +93,7 @@ function RegisterPatients({ closeModal }) {
             type="text"
             name="lname"
             id="lname"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 "
           />
         </div>
 
@@ -105,7 +105,7 @@ function RegisterPatients({ closeModal }) {
             type="text"
             name="contact_number"
             id="contact_number"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 "
           />
         </div>
 
@@ -117,7 +117,7 @@ function RegisterPatients({ closeModal }) {
             type="email"
             name="email"
             id="email"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 "
           />
         </div>
 
@@ -129,7 +129,7 @@ function RegisterPatients({ closeModal }) {
             type="text"
             name="blood_group"
             id="blood_group"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 "
           />
         </div>
 
@@ -141,12 +141,12 @@ function RegisterPatients({ closeModal }) {
             type="text"
             name="address"
             id="address"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 "
           />
         </div>
 
         <div className="bg-gray-50 col-span-2 text-center">
-          <button className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          <button className="text-lg inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
             Submit!
           </button>
         </div>

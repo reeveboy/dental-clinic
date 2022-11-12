@@ -81,7 +81,7 @@ function Book() {
   };
   return (
     <div>
-      <div className="text-2xl font-medium text-[#339989]  underline underline-offset-4">
+      <div className="text-3xl font-medium text-[#339989]  underline underline-offset-4">
         Book an Appointment
       </div>
       <p className="p-2"></p>
@@ -92,7 +92,7 @@ function Book() {
         <div className="">
           <label
             htmlFor="patient"
-            className="block text-sm font-medium text-gray-700">
+            className="block text-lg font-medium text-gray-700">
             Patient
           </label>
           <select
@@ -100,7 +100,7 @@ function Book() {
             id="patient"
             name="Patient"
             placeholder="Select Patient"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-lg">
             {patients.map((patient, id) => (
               <option key={id} value={patient.value}>
                 {patient.text}
@@ -112,14 +112,14 @@ function Book() {
         <div className=" ">
           <label
             htmlFor="doctor"
-            className="block text-sm font-medium text-gray-700">
+            className="block text-lg font-medium text-gray-700">
             Doctor
           </label>
           <select
             onChange={handleChange}
             id="Doctor"
             name="Doctor"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-lg">
             {doctors.map((doctor, id) => (
               <option key={id} value={doctor.value}>
                 {doctor.text}
@@ -131,7 +131,7 @@ function Book() {
         <div className="">
           <label
             htmlFor="date"
-            className="block text-sm font-medium text-gray-700">
+            className="block text-lg font-medium text-gray-700">
             Date
           </label>
           <input
@@ -141,14 +141,14 @@ function Book() {
             type="date"
             name="Date"
             id="date"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-lg"
           />
         </div>
 
         <div className="">
           <label
             htmlFor="time"
-            className="block text-sm font-medium text-gray-700">
+            className="block text-lg font-medium text-gray-700">
             Time
           </label>
           <input
@@ -157,14 +157,14 @@ function Book() {
             type="time"
             name="Time"
             id="time"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-lg"
           />
         </div>
 
         <div className="">
           <label
             htmlFor="reason"
-            className="block text-sm font-medium text-gray-700">
+            className="block text-lg font-medium text-gray-700">
             Reason
           </label>
           <input
@@ -174,12 +174,12 @@ function Book() {
             type="text"
             name="Reason"
             id="reason"
-            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-lg"
           />
         </div>
         <div></div>
         <div className="bg-gray-50 col-span-2">
-          <button className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          <button className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-lg font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
             Submit!
           </button>
         </div>

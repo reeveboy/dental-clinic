@@ -49,7 +49,7 @@ function Sidebar() {
           return (
             <li key={id}>
               <Link to={link.link}>
-                <a className="flex items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg bg-[#176b5d] ">
+                <a className="flex text-lg items-center p-2 font-normal text-[#FFFAFB] rounded-lg bg-[#176b5d] ">
                   <img src={link.img} height={25} width={25} />
                   <span className="ml-3 capitalize ">{link.name}</span>
                 </a>
@@ -60,7 +60,7 @@ function Sidebar() {
         return (
           <li key={id}>
             <Link to={link.link}>
-              <a className="flex items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#176b5d] ">
+              <a className="flex items-center p-2 text-lg font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#176b5d] ">
                 <img src={link.img} height={25} width={25} />
                 <span className="ml-3 capitalize ">{link.name}</span>
               </a>
@@ -72,7 +72,7 @@ function Sidebar() {
       <li className="">
         <button
           onClick={openModal}
-          className="flex w-full items-center p-2 text-base font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#176b5d] ">
+          className="flex w-full items-center p-2 text-lg font-normal text-[#FFFAFB] rounded-lg  hover:bg-[#176b5d] ">
           <img src="/icons/sign-out.svg" height={25} width={25} />
           <span className="ml-3 capitalize ">Logout</span>
         </button>
